@@ -1,0 +1,59 @@
+%!TEX encoding = UTF-8 Unicode
+
+%Importazione comandi comuni a tutti i documenti
+\input{../common/header.tex}
+
+%Info documento
+\hypersetup{
+pdfauthor={Eric Miotto}, 
+pdftitle={Introduction to Algorithms, 2nd edition -- solutions to some exercises}, 
+pdfsubject={Introduction to Algorithms, 2nd edition -- solutions to some exercises},
+pdfkeywords={algorithm, solution, exercise}
+}
+
+% define the title
+\author{Eric Miotto}
+\title{Introduction to Algorithms, 2nd edition -- solutions to some exercises}
+
+\begin{document}
+% generates the title
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Problems 1-1, page 13}
+
+Let's start with the largest $n$ that we can handle in 1 second (equivalent to 1.000.000 $\mu$s):%Inclusione dei file che compongono il documento (per ora solo uno)
+
+\begin{itemize}
+ \item $\log_2 n$. It should be
+ 
+ 
+\begin{equation}
+ 10^6=\log_2 n \\
+ n=2^{10^6}
+\end{equation}
+
+This number is quite large, the only way to display it is by using bc (
+\end{itemize}
+
+\begin{table}[!t]
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+& 1 second \\
+\midrule
+
+$\log_2 n$ & $\infty$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Table with characteristics of analyzed tools. Scores are between 0 and 9.}
+\label{table_scores}
+\end{table}
+
+\section{Value of $2^{10^6}$}
+
+\input{largenumber.txt}
+
+\end{document}

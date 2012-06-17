@@ -1,0 +1,81 @@
+%!TEX encoding = UTF-8 Unicode
+
+%Tipo di documento
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel} %Sillabazione con dizionario italiano
+\usepackage[utf8]{inputenc}  %Codifica del documento (per avere gli accenti)
+
+\usepackage{amsmath} %Formule matematiche
+\usepackage{amsfonts} %Font matematici (usato \mathbb)
+\usepackage{amssymb} %Per alcuni simboli particolari (\leqslant)
+%\usepackage{latexsym} %\unlhd
+
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage[noend]{algorithmic}	%Formattazione algoritmi
+\usepackage{color} %Per il colore dei caratteri
+
+\usepackage[pdftex, colorlinks=true, linkcolor=blue]{hyperref} %Deve essere l'ultima istruzione \usepackage
+
+%Definizione enviroment per teoremi, osservazioni, assiomi, ecc...
+%\newtheorem{theorem}{Teorema}[subsection]
+%\newtheorem{proposition}[theorem]{Proposizione}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{notation}[theorem]{Notazione}
+%\newtheorem{corollary}[theorem]{Corollario}
+%\newtheorem{definition}[theorem]{Definizione}
+%\newtheorem{observation}[theorem]{Osservazione}
+%\newenvironment{proof}{\noindent \textbf{Dimostrazione} }{\hspace{\stretch{1}}\rule{1ex}{1ex}\vspace{1em}}
+
+%Nuovi comandi matematici
+\DeclareMathOperator{\MCD}{MCD}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imm}{Im}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\lcm}{lcm}
+
+%Commandi per simboli matematici ricorrenti
+\newcommand{\generate}[1]{\langle #1\rangle}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\UZ}{\Z^*}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\zOnZ}[1]{\Z_{#1}}
+\newcommand{\UzOnZ}[1]{\zOnZ{#1}^*}
+\newcommand{\znz}{\zOnZ{n}}
+\newcommand{\uznz}{\UzOnZ{n}}
+\newcommand{\F}[1]{\mathbb{F}_{#1}}
+\newcommand{\Ftwo}{\F{2}}
+\newcommand{\Ftwon}{\Ftwo^n}
+\newcommand{\class}[2]{[#1]_{#2}}
+\newcommand{\polynomial}[1]{#1[x]}
+\newcommand{\jacobi}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\newcommand{\legendre}[2]{\jacobi{#1}{#2}}
+\newcommand{\ifonlyif}{\Leftrightarrow}
+\newcommand{\cally}[1]{\mathcal{#1}}
+\newcommand{\Prob}[1]{\mathbb{P}(#1)}
+
+%Ambienti
+\newenvironment{example}{\begin{sffamily}\vspace{1em}\noindent \textbf{Esempio} }{\hspace{\stretch{1}}\rule{1ex}{1ex}\vspace{1em}\end{sffamily}}
+\newenvironment{exercise}{\begin{sffamily}\vspace{1em}\noindent \textbf{Esercizio} }{\hspace{\stretch{1}}\rule{1ex}{1ex}\vspace{1em}\end{sffamily}}
+
+%Comando per inserire i riferimenti ai libri	
+\newcommand{\bookref}[1]{$\S$\textsf{#1}}
+
+\definecolor{darkgreen}{cmyk}{.95,0,.68,.41}
+
+%Ridefinizione commandi algorithms
+\renewcommand{\algorithmiccomment}[1]{\textcolor{darkgreen}{$\vartriangleright$#1}}
+%Comando per scrivere il nome della procedura
+\newcommand{\PROCNAME}[1]{\STATE \hspace*{-.3cm}\textsc{#1}}
+%Keyword aggiuntive
+\newcommand{\TO}{\textbf{to} }
+\newcommand{\DOWNTO}{\textbf{downto} }
+\newcommand{\AND}{\textbf{and} }
+\newcommand{\OR}{\textbf{or} }
+\newcommand{\NOT}{\textbf{not} }
+\newcommand{\INPUT}{\STATE \textbf{input:} }
+\newcommand{\OUTPUT}{\STATE \textbf{output:} }

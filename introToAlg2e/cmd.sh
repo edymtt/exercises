@@ -1,0 +1,1 @@
+bc -q large_number_input.txt > largenumber.txt

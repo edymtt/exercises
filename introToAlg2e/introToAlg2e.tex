@@ -3,6 +3,10 @@
 %Importazione comandi comuni a tutti i documenti
 \input{../common/header.tex}
 
+%Comment this line and decomment the second to see the value of 2^{10^6} -- be warned, about 90 pages!
+\excludecomment{largenumber}
+%\includecomment{largenumber}
+
 %Info documento
 \hypersetup{
 pdfauthor={Eric Miotto}, 
@@ -23,18 +27,30 @@ pdfkeywords={algorithm, solution, exercise}
 
 \section{Problems 1-1, page 13}
 
-Let's start with the largest $n$ that we can handle in 1 second (equivalent to 1.000.000 $\mu$s):%Inclusione dei file che compongono il documento (per ora solo uno)
+Let's start with the largest $n$ that we can handle in 1 second (equivalent to 1.000.000 $\mu$s):
 
 \begin{itemize}
  \item $\log_2 n$. It should be
- 
  
 \begin{equation}
  10^6=\log_2 n \\
  n=2^{10^6}
 \end{equation}
 
-This number is quite large, the only way to display it is by using bc (
+This number is quite large, the only way to calculate it is by using bc. To do this, modify the source of this file by changing this line:
+
+\begin{verbatim}
+ \excludecomment{largenumber}
+\end{verbatim}
+
+into
+
+\begin{verbatim}
+ \includecomment{largenumber}
+\end{verbatim}
+
+About 90 pages will be added to show this number in its entirety! This fact is a pratical proof on why complexity of algorithms is important in real life!
+
 \end{itemize}
 
 \begin{table}[!t]
@@ -52,8 +68,10 @@ $\log_2 n$ & $\infty$ \\
 \label{table_scores}
 \end{table}
 
+\begin{largenumber}
 \section{Value of $2^{10^6}$}
 
 \input{largenumber.txt}
+\end{largenumber}
 
 \end{document}

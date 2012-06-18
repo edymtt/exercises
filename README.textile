@@ -1,4 +1,4 @@
-exercises
-=========
+h1. exercises
 
 Solutions of exercises/problems found in several CS books
+* Introduction to Algorithms, 2nd edition

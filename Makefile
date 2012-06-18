@@ -17,8 +17,17 @@ ALG=introToAlg2e/introToAlg2e.tex
 #==Target per la compilazione
 all: output/introToAlg2e.pdf
 
-introToAlg2e/introToAlg2e.pdf : $(COMMON) $(ALG)
+introToAlg2e/introToAlg2e.pdf : $(COMMON) $(ALG) introToAlg2e/largenumber.txt
 	cd introToAlg2e;$(PDFLATEX) ../$(ALG);$(PDFLATEX) ../$(ALG);$(PDFLATEX) ../$(ALG)
 
 output/introToAlg2e.pdf : introToAlg2e/introToAlg2e.pdf
 	$(PDFSIZEOPT) $(PDFSIZEOPT_FLAGS) $? output/introToAlg2e.pdf
+
+introToAlg2e/largenumber.txt:
+	cd introToAlg2e;bc -q large_number_input.txt > largenumber.txt;sed -i -e 's:\\:\\\\:' largenumber.txt
+
+#==Phony target
+.PHONY: clean
+
+clean:
+	rm -fr output/* introToAlg2e/introToAlg2e.pdf introToAlg2e/largenumber.txt
